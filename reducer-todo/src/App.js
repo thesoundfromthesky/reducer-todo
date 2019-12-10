@@ -1,11 +1,15 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import TodoList from "./components/TodoList";
+import { TodoContextProvider } from "./contexts/TodoContext";
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <TodoContextProvider>
+      <div className="App">
+        <TodoList />
+      </div>
+    </TodoContextProvider>
   );
 }
 
