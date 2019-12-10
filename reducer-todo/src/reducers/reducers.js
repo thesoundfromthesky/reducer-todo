@@ -9,6 +9,15 @@ export function todoReducer(state, action) {
   switch (action.type) {
     case "ADD_TODO":
       return [...state, action.payload];
+    case "TOGGLE_TODO":
+      return state.map(item => {
+        if (item.id === action.payload) {
+          return { ...item, completed: !item.completed };
+        }
+        return item;
+      });
+    case "CLEAR_TODO":
+      return state.filter(item => !item.completed);
     default:
       return state;
   }
