@@ -8,7 +8,7 @@ export function TodoContextProvider({ children }) {
   const [todoState, todoDispatch] = useTodo();
 
   return (
-    <TodoContext.Provider value={[todoState, todoDispatch]}>
+    <TodoContext.Provider value={{todoState, todoDispatch}}>
       {children}
     </TodoContext.Provider>
   );
